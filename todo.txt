@@ -1,0 +1,14 @@
+- Get a tensorflow version working
+- Test again
+- Next course
+- Get some real data from Cam
+
+Notes from Course 3
+- Use a single evaluation metric
+- Look at misclassified examples
+- Use static training and dev sets
+
+Backlog
+- Use cloud service or Jetson Nano for GPU (need TF and deep NN)
+- Have true source wav files based on downsampling
+    - Is it necessary if all tests are downsampled and compared to each other?

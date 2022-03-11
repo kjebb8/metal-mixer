@@ -1,0 +1,94 @@
+##### Metal Mixer Code File Summary #####
+
+### Product  Scripts ###
+
+Spectrogram:
+
+Data_Handling:
+  - create_ml_data.sh
+    - Runs createMLData.py
+    - Uses the generateMLData wrapper to do the work of calling all the
+      necessary functions
+    - Tests the createMLData function then generates the ML input data
+      based on the parameters in the function and saves to a file
+
+Machine_Learning:
+  - train_neural_network.sh
+    - Runs trainNeuralNetwork.py
+    - First tests the trainNeuralNetwork functionality
+    - Script then takes input data and trains a neural network model.
+    - Splits the input data into train and test set.
+    - Tests the accuracy and prints the training time.
+    - Save the trained weights to a file.
+
+Music_Separation:
+  - music_separation.sh
+    - Runs musicSeparation.py
+    - First tests the musicSeparation function
+    - Takes the learned weights and biases from a machine learning
+      algorithm and applies them to spectrograms of music to separate out an
+      instrument.
+  - separation_analysis.sh
+    - Runs separationAnalysis.py
+    - First tests the separationAnalysis function
+    - Calculates the separation quality statistics (SIR, SAR, NSDR)
+    - Prints spectrograms of separated and non-separated music for comparison
+
+
+
+### Product Tests ###
+
+Spectrogram:
+  - spectrogram_test.sh
+    - Test the spectrogram classes and functions
+      - frequencyAnalyzerTest
+      - spectrogramTest
+      - audioSpectrogramsTest
+      - equalLoudnessTest
+
+Data_Handling:
+  - data_handler_test.sh
+    - Test the functions used to create the ML input data
+      - audioHandlerTest
+      - instrumentDataParserTest
+      - instrumentMixerTest
+      - spectrogramMLDataGeneratorTest
+      - trueSourceGeneratorTest
+
+Machine_Learning:
+  - neural_network_test.sh
+    - Runs neuralNetworkTest.py
+
+
+### Utility Files ###
+
+Data_Handling:
+  - save_audio_segment.sh
+    - Runs saveAudioSegment.py
+    - Saves segment(s) of instrument audio loaded from a folder to a different
+      folder with the correct name for the InstrumentDataParser.
+  - mixAudio.sh
+    - Runs mixAudio.py
+    - Load multiple audio files, mix (add) them together, and save to a file
+
+Separation_Config:
+  - update_config.sh
+    - Runs updateConfig.py
+    - Tool to update the data in a SeparationConfig instance if necessary
+
+
+### Extra Tests ###
+
+Spectrogram:
+  - music_spectrogram_visual_test.sh
+    - Runs musicSpectrogramVisualTest.py
+    - Script to visualize audio/music in spectrograms
+  - music_spectrogram_audio_test.sh
+    - Runs musicSpectrogramAudioTest.py
+    - Script to create processed audio/music from spectrogram operations
+
+Data_Handling:
+  - music_isolation_test.sh
+    - Runs musicIsolationTest.py
+    - Test an example of masks being applied to mixed instrument music to
+      see how ideal masks perform.
